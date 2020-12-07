@@ -17,8 +17,8 @@ function setup() {
   image(logoIcon,  width/2 , height / 2, logoIcon.width/7, logoIcon.height/7);
   }
 /////////////////////////////////////////////////////////////////////////
-function mouseClicked() {
-  if (pag == 0) {
+function draw() {
+  if (mouseIsPressed) {
     background('#F9F9F9'); //chiaro
     image(benvenuto, width / 2, height / 50*28, benvenuto.width / 6, benvenuto.height / 6);
   //testo caratteristiche
@@ -37,10 +37,7 @@ function mouseClicked() {
   button= createButton('inizia');
   button.position(width/20*9,  height / 50*44);
   button.mousePressed();
-  } else if (pag == 1) {
-      window.open('indexPausa.html','_self');
-      }
-      pag++;
+  }
   }
   /////////////////////////////////////////////////////////////////////
 
