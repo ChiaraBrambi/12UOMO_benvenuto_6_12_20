@@ -30,6 +30,8 @@ function setup() {
   background('#887b86'); //scuro
   imageMode(CENTER); //per pittogrammi
   image(logoIcon, width / 2, height / 2, logoIcon.width / 7, logoIcon.height / 7);
+  h1 = 'Leggi e accetta';
+  h2 = 'i termini e le condizioni';
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -82,9 +84,9 @@ function draw() {
     push();
     fill('#877B85'); //4° colore PALETTE
     textSize(25);
-    text('Leggi e accetta', w * 10, h * 13);
+    text(h1, w * 10, h * 13);
     fill('#B7AEB5'); //3° PALETTE
-    text('i termini e le condizioni', w * 10, h * 15);
+    text( h2, w * 10, h * 15);
     pop();
 
     //BARRA COORDINAZIONE
@@ -170,8 +172,10 @@ function draw() {
       ellipse(w * 9.6 + s, h * 39, 8);
       s = 20 * i;
     }
+    button_text = 'Avanti';
 
   } else if (pag == 4) {
+    button_text = 'Accetto';
     let divieto = 'SCONFIGGI LA SCARAMANZIA';
     let sotto_divieto1 = 'Non sarà richiesto nessun gesto irrazionale o scaramantico.'
     let sotto_divieto2 = 'Il successo è pura razionalità.'
@@ -193,9 +197,29 @@ function draw() {
       ellipse(w * 9.6 + s, h * 39, 8);
       s = 20 * i;
     }
+    h1 = 'Leggi e accetta';
+    h2 = 'i termini e le condizioni';
+    step=' step 1/4';
+
   }else if( pag == 5){
+
+    h1 = 'Informativa sulla';
+    h2 = 'privacy';
+
     step=' step 2/4';
     xBarra = ((width / 3.5) / 100) * 50;
+    push();
+    rectMode(CORNER);
+    fill('#877B85'); //4° colore PALETTE
+    rect(w * 10 - width / 7, h * 6 - 7.5, xBarra, 15, 20);
+    textSize(12);
+    text(step, w * 10, h * 10);
+    pop();
+  }else if( pag == 6){
+    h1 = 'Inserisci il codice';
+    h2 = 'per accedere allo stadio';
+    step=' step 3/4';
+    xBarra = ((width / 3.5) / 100) * 75;
     push();
     rectMode(CORNER);
     fill('#877B85'); //4° colore PALETTE
