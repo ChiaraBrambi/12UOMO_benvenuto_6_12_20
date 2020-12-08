@@ -277,13 +277,15 @@ function draw() {
     textSize(12);
     text(step, w * 10, h * 10);
     textSize(15);
+    fill('#D5D0D3'); // grigia
     text('INIZIA UNA VERA ESPERIENZA DI TIFO', w * 10, h * 38);
     pop();
   }
+  else if( pag == 9){
+      window.open('../indexPausa.html','_self');
+  }
 }
 ///////////// FINE DRAW ////////////////////////////////////////////////////////
-
-
 function p() {
   pag++;
 }
