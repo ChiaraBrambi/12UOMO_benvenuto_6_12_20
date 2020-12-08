@@ -174,7 +174,7 @@ function draw() {
     }
     button_text = 'Avanti';
 
-  } else if (pag == 4) {
+  } else if (pag == 4) { /////////////////////////////////////////////////////// ULTIMA CONDIZIONE
     button_text = 'Accetto';
     let divieto = 'SCONFIGGI LA SCARAMANZIA';
     let sotto_divieto1 = 'Non sarà richiesto nessun gesto irrazionale o scaramantico.'
@@ -201,7 +201,7 @@ function draw() {
     h2 = 'i termini e le condizioni';
     step=' step 1/4';
 
-  }else if( pag == 5){
+  }else if( pag == 5){ //////////////////////////////////////////////// PRIVACY FINALE
 
     h1 = 'Informativa sulla';
     h2 = 'privacy';
@@ -215,15 +215,46 @@ function draw() {
     textSize(12);
     text(step, w * 10, h * 10);
     pop();
-  }else if( pag == 6){
-    h1 = 'Inserisci il codice';
-    h2 = 'per accedere allo stadio';
+  }else if( pag == 6){ //////////////////////////////////////////////// STRUMENTI DEL TIFO
+
+    button_text = 'Avanti';
+    h1 = 'Ecco gli strumenti';
+    h2 = 'per tifare';
     step=' step 3/4';
     xBarra = ((width / 3.5) / 100) * 75;
     push();
     rectMode(CORNER);
     fill('#877B85'); //4° colore PALETTE
     rect(w * 10 - width / 7, h * 6 - 7.5, xBarra, 15, 20);
+    textSize(12);
+    text(step, w * 10, h * 10);
+    pop();
+
+  }else if( pag == 7){/////////////////////////////////////////////////// CODICE PARTITA
+    button_text = 'Inizia';
+    h1 = 'Inserisci il codice';
+    h2 = 'per accedere allo stadio';
+    step=' step 4/4';
+    xBarra = ((width / 3.5) / 100) * 100;
+    push();
+    rectMode(CORNER);
+    fill('#877B85'); //4° colore PALETTE
+    rect(w * 10 - width / 7, h * 6 - 7.5, xBarra, 15, 20);
+    textSize(12);
+    text(step, w * 10, h * 10);
+    pop();
+  }else if( pag == 8){
+    //stadio////////////////////////////////////////////////// STADIO INGRESSO
+    button_text = 'Inizia';
+    h1 = 'Inserisci il codice';
+    h2 = 'per accedere allo stadio';
+    step='';
+    xBarra = ((width / 3.5) / 100) * 100;
+    push();
+    rectMode(CORNER);
+    fill('#F9F9F9'); //4° colore PALETTE
+    rect(w * 10 - width / 7, h * 6 - 7.5, xBarra, 15, 20);
+    fill('#877B85');
     textSize(12);
     text(step, w * 10, h * 10);
     pop();
