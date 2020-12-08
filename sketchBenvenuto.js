@@ -1,6 +1,6 @@
 let logoIcon, benvenuto, imm_condizioni;
 let b1, b2, button_text, testo_privacy;
-let imm1, imm2, imm3, imm4;
+let imm1, imm2, imm3, imm4, strumenti;
 let w, h, s, xBarra, logor, freccia;
 let i = 0;
 let pag = 0;
@@ -22,6 +22,8 @@ function preload() {
   imm3 = loadImage("./assets/avversione.png");
   imm4 = loadImage("./assets/scaramanzia.png");
   testo_privacy = loadImage("./assets/testo.png");
+  strumenti = loadImage("./assets/ogg.png");
+
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -94,7 +96,7 @@ function draw() {
     fill('#D5D0D3'); //barra grigia
     rectMode(CENTER);
     noStroke();
-    rect(w * 10, h * 6, width / 3.5, 15, 20); //rect(x,y,w,h,[tl])
+    rect(w * 10, h * 6, width / 3.5, 15, 20);
     //xBarra = ((width / 3.5) / 100) * p_coord; //altezza barra %, xTot= 439 = width / 3.5
     xBarra = ((width / 3.5) / 100) * 25; //25%
     push();
@@ -235,6 +237,7 @@ function draw() {
     h1 = 'Ecco gli strumenti';
     h2 = 'per tifare';
     step=' step 3/4';
+      image(strumenti, w * 10, height / 50 * 28, strumenti.width / 1.9, strumenti.height / 1.9);
     xBarra = ((width / 3.5) / 100) * 75;
     push();
     rectMode(CORNER);
@@ -263,14 +266,18 @@ function draw() {
     h1 = 'Unisciti';
     h2 = 'agli altri tifosi';
     step='';
-    xBarra = ((width / 3.5) / 100) * 100;
+    xBarra = ((width / 4.5) / 100) * 60;
+    rect(w * 10, h * 35, width / 4.5, 15, 20);
     push();
     rectMode(CORNER);
     fill('#F9F9F9'); //4° colore PALETTE
-    rect(w * 10 - width / 7, h * 6 - 7.5, xBarra, 15, 20);
+    rect(w * 10 - width / 7, h * 6 - 7.5, (width / 3.5) , 15, 20);
     fill('#877B85');
+    rect(w * 10 - width / 9, h * 35- 7.5,  xBarra , 15, 20);
     textSize(12);
     text(step, w * 10, h * 10);
+    textSize(15);
+    text('INIZIA UNA VERA ESPERIENZA DI TIFO', w * 10, h * 38);
     pop();
   }
 }
