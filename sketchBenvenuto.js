@@ -1,6 +1,6 @@
 let logoIcon, benvenuto, imm_condizioni;
-let button;
-let imm2, imm3, imm4;
+let b1, b2, button_text;
+let imm1, imm2, imm3, imm4;
 let w, h, s, xBarra, logor, freccia;
 let i = 0;
 let pag = 0;
@@ -17,7 +17,7 @@ function preload() {
   benvenuto = loadImage("./assets/benvenuto.png"); //trombetta chiara
   logor = loadImage("./assets/logopiccolo.png"); //logo ridotto
   freccia = loadImage("./assets/freccia.png");
-  imm_condizioni = loadImage("./assets/esuberanza.png");
+  imm1 = loadImage("./assets/esuberanza.png");
   imm2 = loadImage("./assets/spontaneità.png");
   imm3 = loadImage("./assets/avversione.png");
   imm4 = loadImage("./assets/scaramanzia.png");
@@ -44,6 +44,7 @@ function draw() {
 
   if (i > 1 && pag == 0) {
     background('#F9F9F9'); //chiaro
+    button_text = 'Inizia';
     image(benvenuto, w * 10, height / 50 * 28, benvenuto.width / 6, benvenuto.height / 6);
     //testo caratteristiche
     textFont('quicksand');
@@ -61,16 +62,20 @@ function draw() {
   }
   if (i > 1) {
     ///////// BOTTONE //////////////////////////////////////////
-    button = createButton('Inizia');
-    button.position(width / 20 * 9, h * 42);
-    button.mousePressed(p);
-    
+
+    b1 = createButton(button_text);
+    b1.position(w* 9, h * 42);
+    b1.mousePressed(p);
   }
 
   if (pag > 0) {
     background('#F9F9F9'); //chiaro
     //freccia
     image(freccia, w, h * 6, freccia.width / 6, freccia.height / 6);
+    b2 = createButton('');
+    b2.position(w, h * 6);
+    b2.mousePressed(back);
+
     //logo a destra
     image(logor, w * 18.5, h * 6, logor.width / 4.5, logor.height / 4.5);
     //testo titolo
@@ -100,6 +105,7 @@ function draw() {
   console.log(pag);
 
   if (pag == 1) {
+    button_text = 'Avanti';
     push();
     fill('#877B85'); //4° colore PALETTE
     textSize(12);
@@ -108,6 +114,7 @@ function draw() {
     text(sotto_divieto1, w * 10, h * 35);
     text(sotto_divieto2, w * 10, h * 36);
     pop();
+    imm_condizioni = imm1;
     //immagine centrale
     image(imm_condizioni, w * 10, h * 25, imm_condizioni.width / 6, imm_condizioni.height / 6);
     //menu puntini
@@ -186,6 +193,16 @@ function draw() {
       ellipse(w * 9.6 + s, h * 39, 8);
       s = 20 * i;
     }
+  }else if( pag == 5){
+    step=' step 2/4';
+    xBarra = ((width / 3.5) / 100) * 50;
+    push();
+    rectMode(CORNER);
+    fill('#877B85'); //4° colore PALETTE
+    rect(w * 10 - width / 7, h * 6 - 7.5, xBarra, 15, 20);
+    textSize(12);
+    text(step, w * 10, h * 10);
+    pop();
   }
 }
 ///////////// FINE DRAW ////////////////////////////////////////////////////////
