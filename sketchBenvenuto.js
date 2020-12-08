@@ -1,5 +1,5 @@
 let logoIcon, benvenuto, imm_condizioni;
-let b1, b2, button_text;
+let b1, b2, button_text, testo_privacy;
 let imm1, imm2, imm3, imm4;
 let w, h, s, xBarra, logor, freccia;
 let i = 0;
@@ -21,6 +21,7 @@ function preload() {
   imm2 = loadImage("./assets/spontaneità.png");
   imm3 = loadImage("./assets/avversione.png");
   imm4 = loadImage("./assets/scaramanzia.png");
+  testo_privacy = loadImage("./assets/testo.png");
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -121,9 +122,11 @@ function draw() {
     image(imm_condizioni, w * 10, h * 25, imm_condizioni.width / 6, imm_condizioni.height / 6);
     //menu puntini
     noStroke();
-    fill('#d6d1d3');
     for (let i = 0; i < 4; i++) {
-      ellipse(w * 9.6 + s, h * 39, 8);
+      fill('#d6d1d3');
+      ellipse(w * 9.6 + s, h * 39, 10);
+      fill('#877B85');
+      ellipse(w * 9.6 , h * 39, 10);
       s = 20 * i;
     }
 
@@ -146,7 +149,10 @@ function draw() {
     noStroke();
     fill('#d6d1d3');
     for (let i = 0; i < 4; i++) {
-      ellipse(w * 9.6 + s, h * 39, 8);
+      fill('#d6d1d3');
+      ellipse(w * 9.6 + s, h * 39, 10);
+      fill('#877B85');
+      ellipse(w * 9.6 + 20, h * 39, 10);
       s = 20 * i;
     }
 
@@ -169,7 +175,10 @@ function draw() {
     noStroke();
     fill('#d6d1d3');
     for (let i = 0; i < 4; i++) {
-      ellipse(w * 9.6 + s, h * 39, 8);
+      fill('#d6d1d3');
+      ellipse(w * 9.6 + s, h * 39, 10);
+      fill('#877B85');
+      ellipse(w * 9.6 + 40, h * 39, 10);
       s = 20 * i;
     }
     button_text = 'Avanti';
@@ -192,9 +201,11 @@ function draw() {
     image(imm_condizioni, w * 10, h * 25, imm_condizioni.width / 6, imm_condizioni.height / 6);
     //menu puntini
     noStroke();
-    fill('#d6d1d3');
     for (let i = 0; i < 4; i++) {
-      ellipse(w * 9.6 + s, h * 39, 8);
+      fill('#d6d1d3');
+      ellipse(w * 9.6 + s, h * 39, 10);
+      fill('#877B85');
+      ellipse(w * 9.6+60 , h * 39, 10);
       s = 20 * i;
     }
     h1 = 'Leggi e accetta';
@@ -205,7 +216,7 @@ function draw() {
 
     h1 = 'Informativa sulla';
     h2 = 'privacy';
-
+    image(testo_privacy, w * 10, height / 50 * 28, testo_privacy.width / 1.9, testo_privacy.height / 1.9);
     step=' step 2/4';
     xBarra = ((width / 3.5) / 100) * 50;
     push();
@@ -214,6 +225,9 @@ function draw() {
     rect(w * 10 - width / 7, h * 6 - 7.5, xBarra, 15, 20);
     textSize(12);
     text(step, w * 10, h * 10);
+    text('HO LETTO E ACCETTATO L’INFORMATIVA PRIVACY', w * 10, h * 38);
+    fill('#D5D0D3'); // grigia
+    rect(w * 7, h * 38-3 , 15, 15, 5);
     pop();
   }else if( pag == 6){ //////////////////////////////////////////////// STRUMENTI DEL TIFO
 
@@ -246,8 +260,8 @@ function draw() {
   }else if( pag == 8){
     //stadio////////////////////////////////////////////////// STADIO INGRESSO
     button_text = 'Inizia';
-    h1 = 'Inserisci il codice';
-    h2 = 'per accedere allo stadio';
+    h1 = 'Unisciti';
+    h2 = 'agli altri tifosi';
     step='';
     xBarra = ((width / 3.5) / 100) * 100;
     push();
