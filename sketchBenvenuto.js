@@ -70,12 +70,12 @@ function draw() {
 
   if (i > 1) {
     b1 = createButton(button_text);
-    b1.position(w* 9, h * 42);
+    b1.position(w * 9, h * 42);
     b1.mousePressed(p);
     b1.id('startBtn');
   }
 
-///////// PAG 0 //////////////////////////////////////////////////////////////////////////////////////////
+  ///////// PAG 0 //////////////////////////////////////////////////////////////////////////////////////////
   if (pag > 0) {
     background('#F9F9F9'); //chiaro
     b2 = createButton("");
@@ -91,7 +91,7 @@ function draw() {
     textSize(25);
     text(h1, w * 10, h * 13);
     fill('#B7AEB5'); //3° PALETTE
-    text( h2, w * 10, h * 15);
+    text(h2, w * 10, h * 15);
     pop();
 
     //BARRA COORDINAZIONE
@@ -128,7 +128,7 @@ function draw() {
       fill('#d6d1d3');
       ellipse(w * 9.6 + s, h * 39, 10);
       fill('#877B85');
-      ellipse(w * 9.6 , h * 39, 10);
+      ellipse(w * 9.6, h * 39, 10);
       s = 20 * i;
     }
 
@@ -207,41 +207,38 @@ function draw() {
       fill('#d6d1d3');
       ellipse(w * 9.6 + s, h * 39, 10);
       fill('#877B85');
-      ellipse(w * 9.6+60 , h * 39, 10);
+      ellipse(w * 9.6 + 60, h * 39, 10);
       s = 20 * i;
     }
     h1 = 'Leggi e accetta';
     h2 = 'i termini e le condizioni';
-    step=' step 1/4';
+    step = ' step 1/4';
 
-  }else if( pag == 5){ //////////////////////////////////////////////// PRIVACY FINALE
+  } else if (pag == 5) { //////////////////////////////////////////////// PRIVACY FINALE
 
     h1 = 'Informativa sulla';
     h2 = 'privacy';
     image(testo_privacy, w * 10, height / 50 * 28, testo_privacy.width / 1.9, testo_privacy.height / 1.9);
-    step=' step 2/4';
+    step = ' step 2/4';
     xBarra = ((width / 3.5) / 100) * 50;
     push();
     rectMode(CORNER);
     fill('#877B85'); //4° colore PALETTE
-    rect(w * 10 - width / 7, h * 6 - 7.5, xBarra, 15, 20);///chackbox
+    rect(w * 10 - width / 7, h * 6 - 7.5, xBarra, 15, 20); ///chackbox
 
     textSize(12);
     text(step, w * 10, h * 10);
     //text('HO LETTO E ACCETTATO L’INFORMATIVA PRIVACY', w * 10, h * 38);
-      b3 = document.getElementById("container");
-      b3.position(w * 10, h * 38);
-    fill('#D5D0D3'); // grigia
-    rect(w * 7, h * 38-3 , 15, 15, 5);
+    document.getElementById("container").style.display = 'flex';
     pop();
 
-  }else if( pag == 6){ //////////////////////////////////////////////// STRUMENTI DEL TIFO
-
+  } else if (pag == 6) { //////////////////////////////////////////////// STRUMENTI DEL TIFO
+    document.getElementById("container").style.display = 'none';
     button_text = 'Avanti';
     h1 = 'Ecco gli strumenti';
     h2 = 'per tifare';
-    step=' step 3/4';
-      image(strumenti, w * 10, height / 50 * 28, strumenti.width / 1.9, strumenti.height / 1.9);
+    step = ' step 3/4';
+    image(strumenti, w * 10, height / 50 * 28, strumenti.width / 1.9, strumenti.height / 1.9);
     xBarra = ((width / 3.5) / 100) * 75;
     push();
     rectMode(CORNER);
@@ -251,11 +248,11 @@ function draw() {
     text(step, w * 10, h * 10);
     pop();
 
-  }else if( pag == 7){/////////////////////////////////////////////////// CODICE PARTITA
+  } else if (pag == 7) { /////////////////////////////////////////////////// CODICE PARTITA
     button_text = 'Inizia';
     h1 = 'Inserisci il codice';
     h2 = 'per accedere allo stadio';
-    step=' step 4/4';
+    step = ' step 4/4';
     xBarra = ((width / 3.5) / 100) * 100;
     push();
     rectMode(CORNER);
@@ -264,21 +261,21 @@ function draw() {
     textSize(12);
     text(step, w * 10, h * 10);
     pop();
-  }else if( pag == 8){
+  } else if (pag == 8) {
     //stadio////////////////////////////////////////////////// STADIO INGRESSO
     button_text = 'Inizia';
     h1 = 'Unisciti';
     h2 = 'agli altri tifosi';
-    step='';
+    step = '';
     xBarra = ((width / 4.5) / 100) * 60;
 
-    rect(w * 10, h * 36, width / 4.5, 15, 20);//barra grigia in basso
+    rect(w * 10, h * 36, width / 4.5, 15, 20); //barra grigia in basso
     push();
     rectMode(CORNER);
     fill('#F9F9F9'); //bianca
-    rect(w * 10 - width / 7, h * 6 - 7.5, (width / 3.5) , 40, 20);// barra in alto BIANCA CHE COPRE BARA STANDARED
+    rect(w * 10 - width / 7, h * 6 - 7.5, (width / 3.5), 40, 20); // barra in alto BIANCA CHE COPRE BARA STANDARED
     fill('#877B85');
-    rect(w * 10 - width / 9, h * 36 - 7.5,  xBarra , 15, 20);//barra in basso
+    rect(w * 10 - width / 9, h * 36 - 7.5, xBarra, 15, 20); //barra in basso
     textSize(12);
     text(step, w * 10, h * 10);
     textSize(14);
@@ -286,9 +283,8 @@ function draw() {
     text('60%', w * 10, h * 34);
     text('INIZIA UNA VERA ESPERIENZA DI TIFO', w * 10, h * 39);
     pop();
-  }
-  else if( pag == 9){
-      window.open('../indexPausa.html','_self');
+  } else if (pag == 9) {
+    window.open('../indexPausa.html', '_self');
   }
 }
 ///////////// FINE DRAW ////////////////////////////////////////////////////////
