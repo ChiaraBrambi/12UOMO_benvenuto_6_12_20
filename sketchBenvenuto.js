@@ -4,6 +4,7 @@ let imm1, imm2, imm3, imm4, strumenti, info;
 let w, h, s, xBarra, logor;
 let i = 0;
 let pag = 0;
+let spunta = 0;
 let h1, h2;
 
 let divieto = 'ELOGIA IL CONTENIMENTO';
@@ -122,7 +123,7 @@ function draw() {
     pop();
     imm_condizioni = imm1;
     //immagine centrale
-    image(imm_condizioni, w * 10, h * 25-6, imm_condizioni.width / 6, imm_condizioni.height / 6);
+    image(imm_condizioni, w * 10, h * 25 - 6, imm_condizioni.width / 6, imm_condizioni.height / 6);
     //menu puntini
     noStroke();
     for (let i = 0; i < 4; i++) {
@@ -201,7 +202,7 @@ function draw() {
     pop();
     imm_condizioni = imm4;
     //immagine centrale
-    image(imm_condizioni, w * 10, h * 25-4, imm_condizioni.width / 6, imm_condizioni.height / 6);
+    image(imm_condizioni, w * 10, h * 25 - 4, imm_condizioni.width / 6, imm_condizioni.height / 6);
     //menu puntini
     noStroke();
     for (let i = 0; i < 4; i++) {
@@ -222,9 +223,14 @@ function draw() {
     h2 = 'privacy';
     image(testo_privacy, w * 10, height / 50 * 28, testo_privacy.width / 1.9, testo_privacy.height / 1.9);
 
-    b1.style('background-color', '#d6d1d3');
-    b1.style('cursor', 'not-allowed');
 
+    if (spunta == 1) {
+      b1.style('background-color', '#877B85');
+      b1.style('cursor', 'pointer');
+    } else {
+      b1.style('background-color', '#d6d1d3');
+      b1.style('cursor', 'not-allowed');
+    }
     step = ' step 2/4';
     xBarra = ((width / 3.5) / 100) * 50;
     push();
@@ -276,12 +282,12 @@ function draw() {
     h2 = 'agli altri tifosi';
     step = '';
     xBarra = ((width / 4.5) / 100) * 60;
-    image(stadio, w * 10, h * 26, stadio.width /2, stadio.height / 2);
+    image(stadio, w * 10, h * 26, stadio.width / 2, stadio.height / 2);
     rect(w * 10, h * 36, width / 4.5, 15, 20); //barra grigia in basso
 
 
-      fill('#F9F9F9'); //bianca
-    rect(w * 10, h * 6, width / 3.5,  20); // barra in alto BIANCA CHE COPRE BARA STANDARED
+    fill('#F9F9F9'); //bianca
+    rect(w * 10, h * 6, width / 3.5, 20); // barra in alto BIANCA CHE COPRE BARA STANDARED
 
     push();
     rectMode(CORNER);
@@ -299,8 +305,17 @@ function draw() {
   }
 }
 ///////////// FINE DRAW ////////////////////////////////////////////////////////
+
 function p() {
   pag++;
+}
+
+function q() {
+  if (spunta == 0) {
+    spunta = 1
+  } else if (spunta == 1) {
+    spunta = 0;
+  }
 }
 
 function back() {
