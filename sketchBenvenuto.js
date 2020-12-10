@@ -65,21 +65,26 @@ function draw() {
     fill('#877B85'); //4° colore PALETTE
     text('Benvenuto,', w * 10, h * 11);
   }
-  if (i > 1) {
-    ///////// BOTTONE //////////////////////////////////////////
 
+  ///////// BOTTONE //////////////////////////////////////////////////////////////////////////////////////////
+  if (i > 1) {
     b1 = createButton(button_text);
     b1.position(w* 9, h * 42);
     b1.mousePressed(p);
+    b1.id('startBtn');
   }
 
+
+///////// PAG 0 //////////////////////////////////////////////////////////////////////////////////////////
   if (pag > 0) {
     background('#F9F9F9'); //chiaro
     //freccia
-    image(freccia, w, h * 6, freccia.width / 6, freccia.height / 6);
-    b2 = createButton('');
-    b2.position(w, h * 6);
+    //image(freccia, w, h * 6, freccia.width / 6, freccia.height / 6);
+
+    b2 = createButton("");
+    b2.position(w-20, h * 5);
     b2.mousePressed(back);
+    b2.id('pauseBtn')
 
     //logo a destra
     image(logor, w * 18.5, h * 6, logor.width / 4.5, logor.height / 4.5);
