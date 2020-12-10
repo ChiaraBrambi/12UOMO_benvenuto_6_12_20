@@ -201,3 +201,52 @@ background-image: url("data:image/svg+xml,%3Csvg id='Layer_1' data-name='Layer 1
     outline: none;
     border: none;
   }
+
+
+/* PER PUNTO DI DOMANDA CODICE PARTITA */
+.container {
+  position: relative;
+  width: 50%;
+}
+  #schermo{
+    position:absolute;
+    width:auto;
+    height:auto;
+    left:49.5%;
+    top:60%;
+    margin:0;
+    z-index:1;
+    display: none;
+    justify-content:left;
+    align-items: center;
+}
+#imm{
+  width: 16.6px;
+  height: 17,3px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+
+}
+
+.container:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+.text {
+  color: #b7aeb5 ;
+  font-size: inherit;
+  position: inherit;
+  top: 100%;
+  left: 100%;
+  text-align: center;
+  font-family: inherit;
+}

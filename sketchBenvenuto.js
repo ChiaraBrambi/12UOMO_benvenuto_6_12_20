@@ -1,6 +1,6 @@
 let logoIcon, benvenuto, imm_condizioni;
 let b1, b2, button_text, testo_privacy, stadio;
-let imm1, imm2, imm3, imm4, strumenti, info;
+let imm1, imm2, imm3, imm4, strumenti;
 let w, h, s, xBarra, logor;
 let i = 0;
 let pag = 0;
@@ -18,7 +18,6 @@ function preload() {
   benvenuto = loadImage("./assets/benvenuto.png"); //trombetta chiara
   logor = loadImage("./assets/logopiccolo.png"); //logo ridotto
   stadio = loadImage("./assets/stadio.png");
-  info = loadImage("./assets/info.png");
   imm1 = loadImage("./assets/esuberanza.png");
   imm2 = loadImage("./assets/spontaneità.png");
   imm3 = loadImage("./assets/avversione.png");
@@ -42,7 +41,7 @@ function setup() {
 /////////////////////////////////////////////////////////////////////////
 function draw() {
   //CONTATORE i DEL TEMPO
-  if (frameCount % 5 == 0) { //multiplo di 50 incrementa i
+  if (frameCount % 15 == 0) { //multiplo di 50 incrementa i
     i++;
   }
 
@@ -249,6 +248,7 @@ function draw() {
   } else if (pag == 6) { //////////////////////////////////////////////// STRUMENTI DEL TIFO
     document.getElementById("container").style.display = 'none';
     document.getElementById("forum").style.display = 'none';
+    document.getElementById("schermo").style.display = 'none';
     button_text = 'Avanti';
     h1 = 'Ecco gli strumenti';
     h2 = 'per tifare';
@@ -265,7 +265,7 @@ function draw() {
 
   } else if (pag == 7) { /////////////////////////////////////////////////// CODICE PARTITA
       document.getElementById("forum").style.display = 'block';
-
+      document.getElementById("schermo").style.display = 'block';
     button_text = 'Inizia';
     h1 = 'Inserisci il codice';
     h2 = 'per accedere allo stadio';
@@ -278,10 +278,10 @@ function draw() {
     textSize(12);
     text(step, w * 10, h * 10);
     pop();
-    image(info, w * 10, h * 32, info.width / 2, info.height / 2);
 
   } else if (pag == 8) { //stadio////////////////////////////////////////////////// STADIO INGRESSO
     document.getElementById("forum").style.display = 'none';
+    document.getElementById("schermo").style.display = 'none';
     button_text = 'Inizia';
     h1 = 'Unisciti';
     h2 = 'agli altri tifosi';
