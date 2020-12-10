@@ -1,7 +1,7 @@
 let logoIcon, benvenuto, imm_condizioni;
-let b1, b2, button_text, testo_privacy;
+let b1, b2, button_text, testo_privacy, b3;
 let imm1, imm2, imm3, imm4, strumenti;
-let w, h, s, xBarra, logor, freccia;
+let w, h, s, xBarra, logor;
 let i = 0;
 let pag = 0;
 let h1, h2;
@@ -16,7 +16,7 @@ function preload() {
   logoIcon = loadImage("./assets/logo.png");
   benvenuto = loadImage("./assets/benvenuto.png"); //trombetta chiara
   logor = loadImage("./assets/logopiccolo.png"); //logo ridotto
-  freccia = loadImage("./assets/freccia.png");
+  //freccia = loadImage("./assets/freccia.png");
   imm1 = loadImage("./assets/esuberanza.png");
   imm2 = loadImage("./assets/spontaneità.png");
   imm3 = loadImage("./assets/avversione.png");
@@ -67,6 +67,7 @@ function draw() {
   }
 
   ///////// BOTTONE //////////////////////////////////////////////////////////////////////////////////////////
+
   if (i > 1) {
     b1 = createButton(button_text);
     b1.position(w* 9, h * 42);
@@ -74,15 +75,11 @@ function draw() {
     b1.id('startBtn');
   }
 
-
 ///////// PAG 0 //////////////////////////////////////////////////////////////////////////////////////////
   if (pag > 0) {
     background('#F9F9F9'); //chiaro
-    //freccia
-    //image(freccia, w, h * 6, freccia.width / 6, freccia.height / 6);
-
     b2 = createButton("");
-    b2.position(w-20, h * 5);
+    b2.position(w, h * 4.5);
     b2.mousePressed(back);
     b2.id('pauseBtn')
 
@@ -111,8 +108,6 @@ function draw() {
     rect(w * 10 - width / 7, h * 6 - 7.5, xBarra, 15, 20);
     pop();
   }
-
-  console.log(pag);
 
   if (pag == 1) {
     button_text = 'Avanti';
@@ -229,13 +224,17 @@ function draw() {
     push();
     rectMode(CORNER);
     fill('#877B85'); //4° colore PALETTE
-    rect(w * 10 - width / 7, h * 6 - 7.5, xBarra, 15, 20);
+    rect(w * 10 - width / 7, h * 6 - 7.5, xBarra, 15, 20);///chackbox
+
     textSize(12);
     text(step, w * 10, h * 10);
-    text('HO LETTO E ACCETTATO L’INFORMATIVA PRIVACY', w * 10, h * 38);
+    //text('HO LETTO E ACCETTATO L’INFORMATIVA PRIVACY', w * 10, h * 38);
+      b3 = document.getElementById("container");
+      b3.position(w * 10, h * 38);
     fill('#D5D0D3'); // grigia
     rect(w * 7, h * 38-3 , 15, 15, 5);
     pop();
+
   }else if( pag == 6){ //////////////////////////////////////////////// STRUMENTI DEL TIFO
 
     button_text = 'Avanti';
@@ -272,18 +271,20 @@ function draw() {
     h2 = 'agli altri tifosi';
     step='';
     xBarra = ((width / 4.5) / 100) * 60;
-    rect(w * 10, h * 35, width / 4.5, 15, 20);
+
+    rect(w * 10, h * 36, width / 4.5, 15, 20);//barra grigia in basso
     push();
     rectMode(CORNER);
-    fill('#F9F9F9'); //4° colore PALETTE
-    rect(w * 10 - width / 7, h * 6 - 7.5, (width / 3.5) , 15, 20);
+    fill('#F9F9F9'); //bianca
+    rect(w * 10 - width / 7, h * 6 - 7.5, (width / 3.5) , 40, 20);// barra in alto BIANCA CHE COPRE BARA STANDARED
     fill('#877B85');
-    rect(w * 10 - width / 9, h * 35- 7.5,  xBarra , 15, 20);
+    rect(w * 10 - width / 9, h * 36 - 7.5,  xBarra , 15, 20);//barra in basso
     textSize(12);
     text(step, w * 10, h * 10);
-    textSize(15);
+    textSize(14);
     fill('#D5D0D3'); // grigia
-    text('INIZIA UNA VERA ESPERIENZA DI TIFO', w * 10, h * 38);
+    text('60%', w * 10, h * 34);
+    text('INIZIA UNA VERA ESPERIENZA DI TIFO', w * 10, h * 39);
     pop();
   }
   else if( pag == 9){
