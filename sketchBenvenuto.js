@@ -248,6 +248,7 @@ function draw() {
 
   } else if (pag == 6) { //////////////////////////////////////////////// STRUMENTI DEL TIFO
     document.getElementById("container").style.display = 'none';
+    document.getElementById("forum").style.display = 'none';
     button_text = 'Avanti';
     h1 = 'Ecco gli strumenti';
     h2 = 'per tifare';
@@ -263,6 +264,8 @@ function draw() {
     pop();
 
   } else if (pag == 7) { /////////////////////////////////////////////////// CODICE PARTITA
+      document.getElementById("forum").style.display = 'block';
+
     button_text = 'Inizia';
     h1 = 'Inserisci il codice';
     h2 = 'per accedere allo stadio';
@@ -275,8 +278,10 @@ function draw() {
     textSize(12);
     text(step, w * 10, h * 10);
     pop();
-  } else if (pag == 8) {
-    //stadio////////////////////////////////////////////////// STADIO INGRESSO
+    image(info, w * 10, h * 32, info.width / 2, info.height / 2);
+
+  } else if (pag == 8) { //stadio////////////////////////////////////////////////// STADIO INGRESSO
+    document.getElementById("forum").style.display = 'none';
     button_text = 'Inizia';
     h1 = 'Unisciti';
     h2 = 'agli altri tifosi';
