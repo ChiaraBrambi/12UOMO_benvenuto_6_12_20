@@ -1,6 +1,6 @@
 let logoIcon, benvenuto, imm_condizioni;
-let b1, b2, button_text, testo_privacy, b3;
-let imm1, imm2, imm3, imm4, strumenti;
+let b1, b2, button_text, testo_privacy, stadio;
+let imm1, imm2, imm3, imm4, strumenti, info;
 let w, h, s, xBarra, logor;
 let i = 0;
 let pag = 0;
@@ -16,7 +16,8 @@ function preload() {
   logoIcon = loadImage("./assets/logo.png");
   benvenuto = loadImage("./assets/benvenuto.png"); //trombetta chiara
   logor = loadImage("./assets/logopiccolo.png"); //logo ridotto
-  //freccia = loadImage("./assets/freccia.png");
+  stadio = loadImage("./assets/stadio.png");
+  info = loadImage("./assets/info.png");
   imm1 = loadImage("./assets/esuberanza.png");
   imm2 = loadImage("./assets/spontaneità.png");
   imm3 = loadImage("./assets/avversione.png");
@@ -121,7 +122,7 @@ function draw() {
     pop();
     imm_condizioni = imm1;
     //immagine centrale
-    image(imm_condizioni, w * 10, h * 25, imm_condizioni.width / 6, imm_condizioni.height / 6);
+    image(imm_condizioni, w * 10, h * 25-6, imm_condizioni.width / 6, imm_condizioni.height / 6);
     //menu puntini
     noStroke();
     for (let i = 0; i < 4; i++) {
@@ -200,7 +201,7 @@ function draw() {
     pop();
     imm_condizioni = imm4;
     //immagine centrale
-    image(imm_condizioni, w * 10, h * 25, imm_condizioni.width / 6, imm_condizioni.height / 6);
+    image(imm_condizioni, w * 10, h * 25-4, imm_condizioni.width / 6, imm_condizioni.height / 6);
     //menu puntini
     noStroke();
     for (let i = 0; i < 4; i++) {
@@ -213,12 +214,17 @@ function draw() {
     h1 = 'Leggi e accetta';
     h2 = 'i termini e le condizioni';
     step = ' step 1/4';
+    document.getElementById("container").style.display = 'none';
 
   } else if (pag == 5) { //////////////////////////////////////////////// PRIVACY FINALE
 
     h1 = 'Informativa sulla';
     h2 = 'privacy';
     image(testo_privacy, w * 10, height / 50 * 28, testo_privacy.width / 1.9, testo_privacy.height / 1.9);
+
+    b1.style('background-color', '#d6d1d3');
+    b1.style('cursor', 'not-allowed');
+
     step = ' step 2/4';
     xBarra = ((width / 3.5) / 100) * 50;
     push();
@@ -232,13 +238,15 @@ function draw() {
     document.getElementById("container").style.display = 'flex';
     pop();
 
+
+
   } else if (pag == 6) { //////////////////////////////////////////////// STRUMENTI DEL TIFO
     document.getElementById("container").style.display = 'none';
     button_text = 'Avanti';
     h1 = 'Ecco gli strumenti';
     h2 = 'per tifare';
     step = ' step 3/4';
-    image(strumenti, w * 10, height / 50 * 28, strumenti.width / 1.9, strumenti.height / 1.9);
+    image(strumenti, w * 10, height / 50 * 28, strumenti.width / 1.5, strumenti.height / 1.5);
     xBarra = ((width / 3.5) / 100) * 75;
     push();
     rectMode(CORNER);
@@ -268,12 +276,15 @@ function draw() {
     h2 = 'agli altri tifosi';
     step = '';
     xBarra = ((width / 4.5) / 100) * 60;
-
+    image(stadio, w * 10, h * 26, stadio.width /2, stadio.height / 2);
     rect(w * 10, h * 36, width / 4.5, 15, 20); //barra grigia in basso
+
+
+      fill('#F9F9F9'); //bianca
+    rect(w * 10, h * 6, width / 3.5,  20); // barra in alto BIANCA CHE COPRE BARA STANDARED
+
     push();
     rectMode(CORNER);
-    fill('#F9F9F9'); //bianca
-    rect(w * 10 - width / 7, h * 6 - 7.5, (width / 3.5), 40, 20); // barra in alto BIANCA CHE COPRE BARA STANDARED
     fill('#877B85');
     rect(w * 10 - width / 9, h * 36 - 7.5, xBarra, 15, 20); //barra in basso
     textSize(12);
